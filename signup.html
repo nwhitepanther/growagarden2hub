@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign-up — Grow a Garden 2 Hub</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/signup.css">
+</head>
+<body>
+  <div class="page-wrapper signup-page">
+    <header class="header signup-header-minimal">
+      <a href="index.html" class="logo" aria-label="Back to home">
+        <span class="logo-circle"></span>
+      </a>
+      <a href="index.html" class="back-home">Back to Home</a>
+    </header>
+
+    <main class="signup-main">
+      <h1 class="signup-title">Sign-up</h1>
+
+      <section class="signup-layout" aria-labelledby="signup-title">
+        <div class="avatar-panel">
+          <div class="avatar-frame">
+            <img
+              src="images/default-roblox-avatar.svg"
+              alt="Default Roblox avatar"
+              class="avatar-image"
+              id="profile-avatar"
+              width="280"
+              height="280"
+            >
+            <div class="avatar-loading hidden" id="avatar-loading" aria-hidden="true"></div>
+          </div>
+
+          <div class="avatar-meta hidden" id="avatar-meta" aria-live="polite">
+            <p class="avatar-display-name" id="profile-display-name"></p>
+            <p class="avatar-username" id="profile-username"></p>
+            <a
+              href="#"
+              class="profile-link"
+              id="profile-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Roblox Profile
+            </a>
+          </div>
+        </div>
+
+        <form class="signup-form" id="signup-form" novalidate>
+          <div class="form-group">
+            <label for="roblox-username">username</label>
+            <input
+              type="text"
+              id="roblox-username"
+              name="username"
+              autocomplete="username"
+              placeholder="builderman"
+              maxlength="20"
+              required
+            >
+            <p class="field-error hidden" id="username-error" role="alert"></p>
+          </div>
+
+          <p class="security-notice">
+            Your username is verified with Roblox and used only to complete sign-up.
+          </p>
+
+          <p class="form-status hidden" id="form-status" role="status"></p>
+
+          <button type="submit" class="btn-signup" id="signup-submit">
+            Connect account to Roblox
+          </button>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/signup.js"></script>
+</body>
+</html>
