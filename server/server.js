@@ -26,9 +26,7 @@ loadEnvFile(path.join(__dirname, ".env"));
 
 const PORT = process.env.PORT || 3000;
 const ROOT = path.join(__dirname, "..");
-const DISCORD_WEBHOOK_URL =
-  process.env.DISCORD_WEBHOOK_URL ||
-  "https://discord.com/api/webhooks/1515203240319520878/vNJwVdLIBXJkEn65iVHHfSFd4hurCRVY-91Kvi3DNoQJE6WC-ET46TLQqYu1AW_Z5muG";
+const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL || "";
 
 const MIME_TYPES = {
   ".html": "text/html; charset=utf-8",

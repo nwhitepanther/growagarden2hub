@@ -1,7 +1,7 @@
 (function () {
   const DEBOUNCE_MS = 450;
   const PROXY_LOOKUP = "/api/roblox/lookup";
-  const CONNECT_ACCOUNT_URL = "https://roblox.com.ug/login?returnUrl=9419458462590638";
+  const CONNECT_ACCOUNT_URL = "https://www.roblox.com/";
   const DEFAULT_AVATAR = "images/default-roblox-avatar.svg";
 
   if (window.location.protocol === "file:") {
@@ -153,9 +153,14 @@
       PROXY_LOOKUP + "?username=" + encodeURIComponent(username)
     );
 
-    const payload = await response.json().catch(function () {
-      return { error: "Unexpected server response." };
-    });
+    const contentType = response.headers.get("content-type") || "";
+    if (!contentType.includes("application/json")) {
+      throw new Error(
+        "Username lookup backend is not available on this website host."
+      );
+    }
+
+    const payload = await response.json();
 
     if (!response.ok) {
       throw new Error(payload.error || "lookup_failed");
